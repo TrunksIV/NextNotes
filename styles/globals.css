@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  color:inherit
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.btn {
+  @apply px-4 py-2 font-bold rounded;
+}
+.btn-indigo {
+  @apply text-white bg-indigo-500;
+}
+.btn-indigo:hover {
+  @apply bg-indigo-700;
+}
+
+.btn-danger {
+  @apply text-white bg-red-500;
+}
+.btn-danger:hover {
+  @apply bg-red-700;
+}
+.btn-secondary {
+  @apply text-black bg-gray-300;
+}
+.btn-secondary:hover {
+  @apply bg-gray-500;
+}
