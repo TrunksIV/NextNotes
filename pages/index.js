@@ -18,7 +18,7 @@ const HomePage = () => {
   // get all notes
   const getNotes = () => {
     axios
-      .get("http://localhost:8080/api/notes/")
+      .get("https://tariro-express-notes.herokuapp.com/api/notes/")
       .then((res) => {
         res.status === 200
           ? setnotes(res.data)
@@ -32,7 +32,7 @@ const HomePage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/api/notes/", newNote)
+      .post("https://tariro-express-notes.herokuapp.com/api/notes/", newNote)
       .then((res) => {
         console.log(res.data);
         getNotes();
@@ -46,7 +46,10 @@ const HomePage = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:8080/api/notes/${newNote.id}`, newNote)
+      .put(
+        `https://tariro-express-notes.herokuapp.com/api/notes/${newNote.id}`,
+        newNote
+      )
       .then((res) => {
         console.log(res.data);
         getNotes();
@@ -59,7 +62,9 @@ const HomePage = () => {
   const handleDelete = (e) => {
     e.preventDefault();
     axios
-      .delete(`http://localhost:8080/api/notes/${newNote.id}`)
+      .delete(
+        `https://tariro-express-notes.herokuapp.com/api/notes/${newNote.id}`
+      )
       .then((res) => {
         console.log(res.data);
         getNotes();
